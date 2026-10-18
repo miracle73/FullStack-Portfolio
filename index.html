@@ -1,429 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Miracle Chukwuma — Full-Stack Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nwadiaro Miracle Chukwuma | Full Stack Engineer</title>
+<meta name="description" content="I build and run web platforms end to end: booking and payments, commerce operations, SaaS and the cloud infrastructure under them.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://miracle73.github.io/FullStack-Portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://miracle73.github.io/FullStack-Portfolio/">
+<meta property="og:title" content="Nwadiaro Miracle Chukwuma | Full Stack Engineer">
+<meta property="og:description" content="I build and run web platforms end to end: booking and payments, commerce operations, SaaS and the cloud infrastructure under them.">
+<meta property="og:image" content="https://miracle73.github.io/FullStack-Portfolio/me.jpg">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="400">
+<meta property="og:image:alt" content="Portrait of Nwadiaro Miracle Chukwuma">
+<meta name="twitter:card" content="summary">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg: #fafaf8;
-  --white: #ffffff;
-  --ink: #111110;
-  --ink2: #3a3a38;
-  --muted: #888884;
-  --border: #e4e4e0;
-  --border2: #d0d0cb;
-  --tag-bg: #f0f0ec;
-  --green: #2d6a4f;
-  --green-bg: #eaf3ee;
-  --font-d: 'Bricolage Grotesque', sans-serif;
-  --font-b: 'Inter', sans-serif;
-  --max: 1100px;
-}
-
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-b);
-  font-size: 15px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(250,250,248,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 2.5rem; height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-family: var(--font-d); font-weight: 700; font-size: 1rem; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a { color: var(--muted); font-size: 0.85rem; text-decoration: none; transition: color 0.15s; }
-.nav-links a:hover { color: var(--ink); }
-.nav-cta { background: var(--ink); color: #fff; padding: 0.48rem 1.2rem; border-radius: 6px; font-size: 0.82rem; font-weight: 500; text-decoration: none; transition: opacity 0.15s; }
-.nav-cta:hover { opacity: 0.75; }
-
-/* LAYOUT */
-.container { max-width: var(--max); margin: 0 auto; padding: 0 2.5rem; }
-
-/* HERO */
-.hero { max-width: var(--max); margin: 0 auto; padding: 9rem 2.5rem 6rem; border-bottom: 1px solid var(--border); }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 0.45rem;
-  font-size: 0.78rem; font-weight: 500; color: var(--green);
-  background: var(--green-bg); padding: 0.28rem 0.85rem;
-  border-radius: 99px; margin-bottom: 2.2rem; letter-spacing: 0.01em;
-}
-.eyebrow::before { content:''; width:7px; height:7px; background:var(--green); border-radius:50%; animation: blink 2s infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
-
-.hero h1 {
-  font-family: var(--font-d);
-  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
-  font-weight: 800; line-height: 1.06; letter-spacing: -0.03em;
-  color: var(--ink); max-width: 720px; margin-bottom: 1.5rem;
-}
-.hero-p { font-size: 1rem; color: var(--muted); max-width: 460px; line-height: 1.8; font-weight: 300; margin-bottom: 2.2rem; }
-.hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-.btn-solid { background: var(--ink); color: #fff; padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 500; font-size: 0.87rem; text-decoration: none; transition: opacity .15s; }
-.btn-solid:hover { opacity: 0.78; }
-.btn-ghost { border: 1px solid var(--border2); color: var(--ink2); padding: 0.75rem 1.75rem; border-radius: 8px; font-size: 0.87rem; text-decoration: none; transition: border-color .15s, background .15s; }
-.btn-ghost:hover { border-color: var(--ink); background: var(--tag-bg); }
-
-.hero-stats { display: flex; gap: 3rem; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border); }
-.s-val { font-family: var(--font-d); font-size: 2rem; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; }
-.s-lbl { font-size: 0.77rem; color: var(--muted); margin-top: 0.15rem; }
-
-/* SECTIONS */
-.sec { padding: 5.5rem 0; border-bottom: 1px solid var(--border); }
-.sec-lbl { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.7rem; }
-.sec-h { font-family: var(--font-d); font-size: clamp(1.7rem,3vw,2.4rem); font-weight: 800; letter-spacing: -0.025em; color: var(--ink); line-height: 1.1; margin-bottom: 0.75rem; }
-.sec-p { color: var(--muted); max-width: 480px; font-size: 0.9rem; line-height: 1.7; }
-.sec-head { margin-bottom: 3.5rem; }
-
-/* SERVICES */
-.svc-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-.svc { background: var(--white); padding: 2.2rem 2.4rem; transition: background .15s; }
-.svc:hover { background: var(--tag-bg); }
-.svc-n { font-size: 0.7rem; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 0.9rem; }
-.svc h3 { font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.55rem; letter-spacing: -0.01em; }
-.svc p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
-
-/* PROCESS */
-.proc-list { display: flex; flex-direction: column; }
-.proc { display: grid; grid-template-columns: 52px 1fr 24px; align-items: start; gap: 2rem; padding: 2.2rem 0; border-bottom: 1px solid var(--border); }
-.proc:last-child { border-bottom: none; }
-.proc-n { font-family: var(--font-d); font-size: 0.78rem; font-weight: 700; color: var(--border2); padding-top: 0.1rem; letter-spacing: 0.04em; transition: color .15s; }
-.proc:hover .proc-n { color: var(--ink); }
-.proc-body h3 { font-family: var(--font-d); font-size: 1.05rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 0.35rem; }
-.proc-body p { font-size: 0.86rem; color: var(--muted); line-height: 1.65; max-width: 500px; }
-.proc-arr { color: var(--border2); font-size: 1rem; padding-top: 0.15rem; transition: color .15s; }
-.proc:hover .proc-arr { color: var(--ink); }
-
-/* PROJECTS */
-.proj-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
-.proj-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s, box-shadow .2s; }
-.proj-card:hover { border-color: var(--border2); box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
-.proj-top { padding: 1.8rem 2rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
-.proj-ico { width: 46px; height: 46px; border-radius: 10px; border: 1px solid var(--border); background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
-.proj-badge { font-size: 0.69rem; color: var(--muted); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 500; white-space: nowrap; }
-.proj-body { padding: 1.5rem 2rem; flex: 1; }
-.proj-body h3 { font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 0.55rem; }
-.proj-body p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
-.ptag { font-size: 0.7rem; font-weight: 500; background: var(--tag-bg); color: var(--ink2); padding: 0.2rem 0.6rem; border-radius: 4px; }
-.proj-foot { padding: 1.1rem 2rem; border-top: 1px solid var(--border); }
-.proj-a { font-size: 0.8rem; font-weight: 500; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; transition: gap .15s; }
-.proj-a:hover { gap: 0.55rem; }
-
-/* SKILLS */
-.sk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-.sk-col h3 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem; }
-.sk-row { display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 0; border-bottom: 1px solid var(--border); }
-.sk-row:first-of-type { border-top: 1px solid var(--border); }
-.sk-name { font-size: 0.87rem; color: var(--ink); }
-.sk-lvl { font-size: 0.75rem; color: var(--muted); font-weight: 500; }
-.chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-.chip { font-size: 0.78rem; color: var(--ink2); background: var(--white); border: 1px solid var(--border); padding: 0.32rem 0.8rem; border-radius: 6px; transition: border-color .15s; }
-.chip:hover { border-color: var(--border2); }
-
-/* EXPERIENCE */
-.t-item { display: grid; grid-template-columns: 155px 1fr; gap: 2.5rem; padding: 2.2rem 0; border-bottom: 1px solid var(--border); }
-.t-item:last-child { border-bottom: none; }
-.t-date { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
-.t-co { font-size: 0.72rem; color: var(--muted); margin-top: 0.25rem; }
-.t-role { font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 0.75rem; }
-.t-pts { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
-.t-pts li { font-size: 0.84rem; color: var(--muted); line-height: 1.6; padding-left: 1.1rem; position: relative; }
-.t-pts li::before { content:'–'; position: absolute; left: 0; color: var(--border2); }
-
-/* CONTACT */
-.c-box { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 3rem; max-width: 580px; }
-.c-box p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; }
-.c-rows { display: flex; flex-direction: column; gap: 0.65rem; }
-.c-row { display: flex; align-items: center; gap: 1rem; padding: 0.85rem 1.2rem; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--ink); background: var(--bg); transition: border-color .15s, background .15s; }
-.c-row:hover { border-color: var(--border2); background: var(--tag-bg); }
-.c-ico { width: 32px; height: 32px; border-radius: 7px; background: var(--tag-bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
-.c-lbl { font-size: 0.69rem; color: var(--muted); }
-.c-val { font-size: 0.87rem; font-weight: 500; }
-
-/* FOOTER */
-footer { border-top: 1px solid var(--border); padding: 1.8rem 2.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: var(--muted); background: var(--white); }
-footer a { color: var(--muted); text-decoration: none; }
-footer a:hover { color: var(--ink); }
-
-/* FADE */
-.fade { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
-.fade.on { opacity: 1; transform: none; }
-
-@media (max-width: 760px) {
-  nav { padding: 0 1.2rem; }
-  .nav-links { display: none; }
-  .hero, .container { padding-left: 1.2rem; padding-right: 1.2rem; }
-  .hero { padding-top: 7.5rem; padding-bottom: 3.5rem; }
-  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
-  .svc-grid, .proj-grid, .sk-grid { grid-template-columns: 1fr; }
-  .t-item { grid-template-columns: 1fr; gap: 0.4rem; }
-  footer { flex-direction: column; gap: 0.4rem; text-align: center; }
-}
+:root{--bg:#000;--panel:#0c0c0c;--line:#262626;--mute:#a3a3a3;--accent:#ff7a1a;--accent2:#ffa060;--fg:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mono{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace}
+.wrap{max-width:1024px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+nav .logo{color:var(--accent);font-weight:600;font-size:14px}
+nav ul{display:flex;gap:24px;list-style:none;font-size:14px;color:var(--mute)}
+nav ul a:hover{color:var(--fg)}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+.label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(30px,6vw,48px);line-height:1.15;letter-spacing:-.02em;margin-top:16px}
+h2{font-size:clamp(26px,4vw,32px);margin-top:12px;line-height:1.2}
+.hero{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.role{color:var(--accent2);font-size:20px;margin-top:6px}
+.lead{color:var(--mute);font-size:18px;max-width:580px;margin-top:22px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{border:1px solid var(--line);border-radius:8px;padding:9px 16px;font-size:14px;transition:.2s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#000;font-weight:600}
+.btn.primary:hover{filter:brightness(1.1);color:#000}
+.hero img{width:260px;height:260px;object-fit:cover;border-radius:18px;border:1px solid var(--line)}
+.projects{list-style:none;margin-top:40px;display:grid;gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:rgba(255,122,26,.5);transform:translateY(-2px)}
+.card-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.card h3{font-size:24px}
+.card h3 span{color:var(--mute);font-size:15px;margin-right:12px;font-weight:400}
+.card .live{color:var(--accent2);font-size:14px}
+.card .live:hover{text-decoration:underline}
+.card .what{font-size:18px;margin-top:12px}
+.card .key{border-left:2px solid var(--accent);padding-left:16px;margin-top:16px;color:var(--accent)}
+.card .detail{color:var(--mute);margin-top:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:22px}
+.tags li{border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-size:12px;color:var(--mute)}
+.groups{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+.group{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.group h3{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:16px}
+.chip{font:inherit;font-size:14px;cursor:pointer;background:#000;color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:6px 13px;transition:.2s}
+.chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:0 0 18px rgba(255,122,26,.35)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#000}
+.mail{display:inline-block;margin-top:24px;font-size:20px;color:var(--accent);word-break:break-all}
+.mail:hover{text-decoration:underline}
+footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:var(--mute);font-size:14px}
+@media (max-width:900px){.groups{grid-template-columns:1fr}}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.hero img{width:200px;height:200px;order:-1}nav ul{display:none}.card{padding:20px}section{padding:56px 0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<header><div class="wrap"><nav aria-label="Main">
+  <a href="#top" class="logo mono">ciphez</a>
+  <ul><li><a href="#work">Work</a></li><li><a href="#stack">Stack</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav></div></header>
 
-<nav>
-  <a class="nav-logo" href="#">Miracle Chukwuma</a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#projects">Work</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a class="nav-cta" href="mailto:nwadiaromiracle@yahoo.com">Hire Me</a>
-</nav>
-
-<!-- HERO -->
-<div class="hero fade">
-  <div class="eyebrow">Available for new projects</div>
-  <h1>Full-Stack Web Apps That Ship &amp; Scale.</h1>
-  <p class="hero-p">I'm Miracle Chukwuma, a full-stack developer based in Uyo, Nigeria. I build clean, production-ready web applications — from SaaS platforms to data dashboards — that real users love.</p>
-  <div class="hero-btns">
-    <a href="#projects" class="btn-solid">View My Work</a>
-    <a href="mailto:nwadiaromiracle@yahoo.com" class="btn-ghost">Get in Touch</a>
-  </div>
-  <div class="hero-stats">
-    <div><div class="s-val">5+</div><div class="s-lbl">Live web platforms</div></div>
-    <div><div class="s-val">3+</div><div class="s-lbl">Years of experience</div></div>
-    <div><div class="s-val">30%</div><div class="s-lbl">User adoption increase</div></div>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section id="services" class="sec">
-  <div class="container">
-    <div class="sec-head fade">
-      <div class="sec-lbl">What I Do</div>
-      <h2 class="sec-h">Full-Cycle Web Development</h2>
-      <p class="sec-p">From concept to launch — I handle everything your web product needs to succeed.</p>
-    </div>
-    <div class="svc-grid fade">
-      <div class="svc"><div class="svc-n">01</div><h3>Frontend Development</h3><p>Modern, responsive UIs with React, Next.js and TypeScript. Pixel-perfect layouts, fast load times, and great UX.</p></div>
-      <div class="svc"><div class="svc-n">02</div><h3>Backend &amp; APIs</h3><p>Robust REST and GraphQL APIs with Node.js, Nest.js, Django, or Laravel. Authentication, payments, and clean data flow.</p></div>
-      <div class="svc"><div class="svc-n">03</div><h3>Databases &amp; Cloud</h3><p>Schema design with MongoDB, MySQL, or Postgres. Deployment on AWS, Vercel, and other modern cloud platforms.</p></div>
-      <div class="svc"><div class="svc-n">04</div><h3>Testing &amp; Code Quality</h3><p>Unit tests, authentication checks, and QA to keep your codebase reliable and your users protected.</p></div>
+<main id="top">
+<section><div class="wrap hero">
+  <div>
+    <p class="label mono">Lagos, Nigeria · 5 years</p>
+    <h1>Nwadiaro Miracle Chukwuma</h1>
+    <p class="role">Full Stack Engineer</p>
+    <p class="lead">I build and run web platforms end to end: booking and payments, commerce operations, SaaS products and the cloud infrastructure under them.</p>
+    <div class="btns">
+      <a class="btn primary" href="#work">See my work</a>
+      <a class="btn" href="https://github.com/miracle73" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="btn" href="mailto:nwadiaromiracle@yahoo.com">Email</a>
     </div>
   </div>
-</section>
+  <img src="me.jpg" alt="Portrait of Nwadiaro Miracle Chukwuma" width="400" height="400" fetchpriority="high">
+</div></section>
 
-<!-- PROCESS -->
-<section id="process" class="sec">
-  <div class="container">
-    <div class="sec-head fade">
-      <div class="sec-lbl">How I Work</div>
-      <h2 class="sec-h">My Process</h2>
-      <p class="sec-p">A clear, collaborative approach so you always know what's happening and why.</p>
-    </div>
-    <div class="proc-list">
-      <div class="proc fade"><div class="proc-n">01</div><div class="proc-body"><h3>Discovery</h3><p>I take time to understand your users, goals, and constraints before writing a single line of code.</p></div><div class="proc-arr">→</div></div>
-      <div class="proc fade"><div class="proc-n">02</div><div class="proc-body"><h3>Design &amp; Architecture</h3><p>Choosing the right stack, mapping out the UI/UX flow, and designing a scalable foundation across frontend, backend, and database.</p></div><div class="proc-arr">→</div></div>
-      <div class="proc fade"><div class="proc-n">03</div><div class="proc-body"><h3>Development</h3><p>Iterative builds with regular check-ins. You see real progress at every milestone — no black boxes.</p></div><div class="proc-arr">→</div></div>
-      <div class="proc fade"><div class="proc-n">04</div><div class="proc-body"><h3>Testing &amp; Deployment</h3><p>Comprehensive QA, unit tests, and smooth delivery to AWS, Vercel, or your own servers.</p></div><div class="proc-arr">→</div></div>
-    </div>
+<section id="work" aria-labelledby="work-title"><div class="wrap">
+  <p class="label mono">Selected work</p>
+  <h2 id="work-title">Platforms I built and run</h2>
+  <ol class="projects">
+    <li><article class="card">
+      <div class="card-top"><h3><span class="mono">01</span>Primlook</h3><a class="live" href="https://www.primlook.com/" target="_blank" rel="noopener noreferrer">Live ↗</a></div>
+      <p class="what">A booking and payments platform I built and ran end to end alone, as founding engineer.</p>
+      <p class="key">Provider webhooks, not the synchronous response, are the source of truth for settlement.</p>
+      <p class="detail">Bookings, payments, WhatsApp messages and scheduled notifications run off the same transactional events. Notifications go through a rate limited queue with backoff, retries and a dead letter queue, and a reconciliation job keeps payments and bookings in agreement.</p>
+      <ul class="tags mono"><li>Node.js</li><li>TypeScript</li><li>Payments</li><li>WhatsApp API</li><li>Job queues</li></ul>
+    </article></li>
+    <li><article class="card">
+      <div class="card-top"><h3><span class="mono">02</span>Owuwe</h3><a class="live" href="https://owuwe.com/" target="_blank" rel="noopener noreferrer">Live ↗</a></div>
+      <p class="what">A multi tenant commerce operations platform: CRM, orders, delivery, inventory, remittance and marketing in one place.</p>
+      <p class="key">The infrastructure is code, and the dev stack costs almost nothing when idle.</p>
+      <p class="detail">AWS CDK in TypeScript defines a VPC with no NAT gateway or load balancer, Postgres 16 on RDS in an isolated subnet, an ARM64 Fargate API that starts at zero tasks, and SQS queues with dead letter queues for assignment timeouts, escalations, webhook intake and notifications. Budgets and anomaly detection alert on spend.</p>
+      <ul class="tags mono"><li>AWS CDK</li><li>ECS Fargate</li><li>RDS Postgres</li><li>SQS</li><li>Multi tenant SaaS</li></ul>
+    </article></li>
+    <li><article class="card">
+      <div class="card-top"><h3><span class="mono">03</span>Boostaff</h3><a class="live" href="https://boostaff.com/" target="_blank" rel="noopener noreferrer">Live ↗</a></div>
+      <p class="what">Cloud and platform engineering for Boostaff, where I currently work.</p>
+      <p class="key">I own the infrastructure, delivery pipelines and deployments the product runs on.</p>
+      <ul class="tags mono"><li>AWS</li><li>Docker</li><li>Terraform</li><li>GitHub Actions</li></ul>
+    </article></li>
+    <li><article class="card">
+      <div class="card-top"><h3><span class="mono">04</span>Hello Bonsai</h3><a class="live" href="https://www.hellobonsai.com/" target="_blank" rel="noopener noreferrer">Live ↗</a></div>
+      <p class="what">An all in one business management platform for freelancers and small agencies.</p>
+      <p class="key">Proposals, contracts, invoicing, time tracking and client CRM in one product.</p>
+      <ul class="tags mono"><li>React</li><li>Node.js</li><li>SaaS</li><li>Payments</li></ul>
+    </article></li>
+    <li><article class="card">
+      <div class="card-top"><h3><span class="mono">05</span>Terraworks Group</h3><a class="live" href="https://terraworksgroup.com/" target="_blank" rel="noopener noreferrer">Live ↗</a></div>
+      <p class="what">A corporate web platform showcasing services, projects and capabilities.</p>
+      <p class="key">Fast and responsive, with a modular content architecture.</p>
+      <ul class="tags mono"><li>Next.js</li><li>Tailwind</li><li>CMS</li><li>SEO</li></ul>
+    </article></li>
+  </ol>
+</div></section>
+
+<section id="stack" aria-labelledby="stack-title"><div class="wrap">
+  <p class="label mono">Stack</p>
+  <h2 id="stack-title">Tools I use</h2>
+  <div class="groups">
+    <div class="group"><h3 class="mono">Frontend</h3><ul class="chips" data-chips="TypeScript,React,Next.js,React Native,Tailwind"></ul></div>
+    <div class="group"><h3 class="mono">Backend</h3><ul class="chips" data-chips="Node.js,NestJS,Python,FastAPI,Rust,PostgreSQL,MongoDB,Redis"></ul></div>
+    <div class="group"><h3 class="mono">Cloud and DevOps</h3><ul class="chips" data-chips="AWS,GCP,Docker,Kubernetes,Terraform,AWS CDK,GitHub Actions"></ul></div>
   </div>
-</section>
+</div></section>
 
-<!-- PROJECTS -->
-<section id="projects" class="sec">
-  <div class="container">
-    <div class="sec-head fade">
-      <div class="sec-lbl">Work</div>
-      <h2 class="sec-h">Live Projects</h2>
-      <p class="sec-p">Real web platforms, shipped to real users — live in production.</p>
-    </div>
-    <div class="proj-grid">
-      <div class="proj-card fade">
-        <div class="proj-top"><div class="proj-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M12 7V3"/><circle cx="12" cy="3" r="1"/><path d="M9 13h.01"/><path d="M15 13h.01"/><path d="M9 17h6"/><path d="M2 14v2"/><path d="M22 14v2"/></svg></div><div class="proj-badge">AI Agent · Automation</div></div>
-        <div class="proj-body">
-          <h3>ApplyPilot</h3>
-          <p>An AI-powered job application agent that scans job boards daily, matches listings to your CV, and auto-applies using browser automation. You sleep, it applies.</p>
-          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">AI Agent</span><span class="ptag">Browser Automation</span><span class="ptag">CV Matching</span></div>
-        </div>
-        <div class="proj-foot"><a class="proj-a" href="https://github.com/miracle73/ApplyPilot-" target="_blank">View on GitHub ↗</a></div>
-      </div>
-      <div class="proj-card fade">
-        <div class="proj-top"><div class="proj-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12c0-4 3-7 7-7-1 4-3 7-7 7Z"/><path d="M12 12c0-3-2-5-5-5 1 3 2 5 5 5Z"/></svg></div><div class="proj-badge">SaaS · Freelance Tools</div></div>
-        <div class="proj-body">
-          <h3>Hello Bonsai</h3>
-          <p>An all-in-one business management platform for freelancers and small agencies — proposals, contracts, invoicing, time tracking, and client CRM in one place.</p>
-          <div class="proj-tags"><span class="ptag">React</span><span class="ptag">Node.js</span><span class="ptag">SaaS</span><span class="ptag">Payments</span></div>
-        </div>
-        <div class="proj-foot"><a class="proj-a" href="https://www.hellobonsai.com/" target="_blank">Visit Site ↗</a></div>
-      </div>
-      <div class="proj-card fade">
-        <div class="proj-top"><div class="proj-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><rect x="5" y="12" width="3" height="7"/><rect x="11" y="7" width="3" height="12"/><rect x="17" y="14" width="3" height="5"/></svg></div><div class="proj-badge">Data · Dashboard</div></div>
-        <div class="proj-body">
-          <h3>OCE Data</h3>
-          <p>A data platform with a clean, performant dashboard for visualizing and managing operational datasets — built for clarity at scale.</p>
-          <div class="proj-tags"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">Data Viz</span><span class="ptag">REST API</span></div>
-        </div>
-        <div class="proj-foot"><a class="proj-a" href="https://app.ocedata.com" target="_blank">Visit App ↗</a></div>
-      </div>
-      <div class="proj-card fade">
-        <div class="proj-top"><div class="proj-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div><div class="proj-badge">Corporate · Services</div></div>
-        <div class="proj-body">
-          <h3>Terraworks Group</h3>
-          <p>Corporate web platform showcasing services, projects, and capabilities — fast, responsive, and built with a modular content architecture.</p>
-          <div class="proj-tags"><span class="ptag">Next.js</span><span class="ptag">Tailwind</span><span class="ptag">CMS</span><span class="ptag">SEO</span></div>
-        </div>
-        <div class="proj-foot"><a class="proj-a" href="https://terraworksgroup.com/" target="_blank">Visit Site ↗</a></div>
-      </div>
-      <div class="proj-card fade">
-        <div class="proj-top"><div class="proj-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.34 11.5 4 4 0 0 0 7 19h10.5Z"/></svg></div><div class="proj-badge">SaaS · AWS</div></div>
-        <div class="proj-body">
-          <h3>Cloud SaaS Platform</h3>
-          <p>A production web application deployed on AWS App Runner — full CI/CD pipeline, containerized backend, and a secure, scalable frontend.</p>
-          <div class="proj-tags"><span class="ptag">React</span><span class="ptag">Node.js</span><span class="ptag">AWS</span><span class="ptag">Docker</span></div>
-        </div>
-        <div class="proj-foot"><a class="proj-a" href="https://bdxe6giq3t.us-east-1.awsapprunner.com/" target="_blank">Visit App ↗</a></div>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="contact" aria-labelledby="ct-title"><div class="wrap">
+  <p class="label mono">Contact</p>
+  <h2 id="ct-title">Have a platform to build?</h2>
+  <p class="lead">Email is the fastest way to reach me.</p>
+  <a class="mail" href="mailto:nwadiaromiracle@yahoo.com">nwadiaromiracle@yahoo.com</a>
+</div></section>
+</main>
 
-<!-- SKILLS -->
-<section id="skills" class="sec">
-  <div class="container">
-    <div class="sec-head fade">
-      <div class="sec-lbl">Technical Skills</div>
-      <h2 class="sec-h">Tools &amp; Expertise</h2>
-    </div>
-    <div class="sk-grid fade">
-      <div class="sk-col">
-        <h3>Core Stack</h3>
-        <div class="sk-row"><span class="sk-name">React / Next.js</span><span class="sk-lvl">Expert</span></div>
-        <div class="sk-row"><span class="sk-name">JavaScript / TypeScript</span><span class="sk-lvl">Expert</span></div>
-        <div class="sk-row"><span class="sk-name">Node.js / Nest.js</span><span class="sk-lvl">Advanced</span></div>
-        <div class="sk-row"><span class="sk-name">React Native / NativeWind</span><span class="sk-lvl">Advanced</span></div>
-        <div class="sk-row"><span class="sk-name">Python / Django</span><span class="sk-lvl">Proficient</span></div>
-        <div class="sk-row"><span class="sk-name">MongoDB / MySQL / Postgres</span><span class="sk-lvl">Proficient</span></div>
-        <div class="sk-row"><span class="sk-name">PHP / Laravel</span><span class="sk-lvl">Proficient</span></div>
-        <div class="sk-row"><span class="sk-name">Ruby on Rails</span><span class="sk-lvl">Familiar</span></div>
-      </div>
-      <div class="sk-col">
-        <h3>Tools &amp; Other</h3>
-        <div class="chips" style="margin-bottom:2rem">
-          <span class="chip">Git / GitHub</span><span class="chip">Docker</span><span class="chip">AWS</span>
-          <span class="chip">Vercel</span><span class="chip">Tailwind CSS</span>
-          <span class="chip">REST / GraphQL</span><span class="chip">Stripe / Payments</span>
-          <span class="chip">Unit Testing</span><span class="chip">CI/CD</span><span class="chip">OOP</span>
-          <span class="chip">AI Agents</span><span class="chip">Browser Automation</span>
-        </div>
-        <h3>Soft Skills</h3>
-        <div class="chips">
-          <span class="chip">Leadership</span><span class="chip">Communication</span>
-          <span class="chip">Time Management</span><span class="chip">Negotiation</span><span class="chip">Budgeting</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="sec">
-  <div class="container">
-    <div class="sec-head fade">
-      <div class="sec-lbl">Background</div>
-      <h2 class="sec-h">Experience</h2>
-    </div>
-    <div>
-      <div class="t-item fade">
-        <div><div class="t-date">Jun 2023 – Present</div><div class="t-co">Fintech · Remote</div></div>
-        <div>
-          <div class="t-role">Full-Stack Developer</div>
-          <ul class="t-pts">
-            <li>Built end-to-end features across web and API layers for accounts, transactions, and investment tools</li>
-            <li>Integrated financial institution APIs and payment gateways for secure account access</li>
-            <li>Designed scalable backend services and database schemas for high-volume traffic</li>
-            <li>Increased user adoption by 30% through improved UX and performance optimization</li>
-            <li>Wrote unit and integration tests ensuring code quality and reliability</li>
-          </ul>
-        </div>
-      </div>
-      <div class="t-item fade">
-        <div><div class="t-date">Sep 2022 – Sep 2023</div><div class="t-co">DevCareer · Remote</div></div>
-        <div>
-          <div class="t-role">Full-Stack Developer</div>
-          <ul class="t-pts">
-            <li>Built web platform for cohort recruitment and programmer assessment</li>
-            <li>Developed scoring algorithms, automatic submission, and real-time evaluation features</li>
-            <li>Built user traffic monitoring and analytics for site administrators</li>
-            <li>Wrote authentication tests to secure dashboard access</li>
-          </ul>
-        </div>
-      </div>
-      <div class="t-item fade">
-        <div><div class="t-date">Haven IQ · Remote</div></div>
-        <div>
-          <div class="t-role">Web &amp; React Native Developer</div>
-          <ul class="t-pts"><li>Cross-platform web and mobile app development with shared API backend</li></ul>
-        </div>
-      </div>
-      <div class="t-item fade">
-        <div><div class="t-date">May 2020 – Aug 2020</div><div class="t-co">Distrobird · Remote</div></div>
-        <div>
-          <div class="t-role">Web Developer Intern</div>
-          <ul class="t-pts">
-            <li>Contributed to payment application from development to live deployment</li>
-            <li>Worked with Ruby on Rails, Node.js, and React</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="sec">
-  <div class="container">
-    <div class="sec-head fade">
-      <div class="sec-lbl">Let's Talk</div>
-      <h2 class="sec-h">Get In Touch</h2>
-    </div>
-    <div class="c-box fade">
-      <p>Open to freelance projects, full-time roles, and collaborations. If you have a web product idea or need a full-stack developer on your team, reach out.</p>
-      <div class="c-rows">
-        <a href="mailto:nwadiaromiracle@yahoo.com" class="c-row">
-          <div class="c-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><div class="c-lbl">Email</div><div class="c-val">nwadiaromiracle@yahoo.com</div></div>
-        </a>
-        <a href="https://github.com/miracle73" target="_blank" class="c-row">
-          <div class="c-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.8C23.5 5.7 18.3.5 12 .5Z"/></svg></div><div><div class="c-lbl">GitHub</div><div class="c-val">github.com/miracle73</div></div>
-        </a>
-        <div class="c-row">
-          <div class="c-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl">Location</div><div class="c-val">Uyo, Nigeria · Open to Remote</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <span>© 2026 Nwadiaro Miracle Chukwuma</span>
-  <span>Uyo, Nigeria · <a href="https://github.com/miracle73">GitHub</a></span>
-</footer>
-
+<footer>© <span id="y">2026</span> Nwadiaro Miracle Chukwuma</footer>
 <script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
-}, { threshold: 0.08 });
-document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+document.querySelectorAll("[data-chips]").forEach(function(ul){
+  ul.dataset.chips.split(",").forEach(function(t){
+    var li=document.createElement("li"),b=document.createElement("button");
+    b.type="button";b.className="chip";b.textContent=t;b.setAttribute("aria-pressed","false");
+    b.onclick=function(){b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true")};
+    li.appendChild(b);ul.appendChild(li);
+  });
+});
+document.getElementById("y").textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
